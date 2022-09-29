@@ -1,0 +1,252 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://font/PressStart2P.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Script/ControlsGD/ControlsScreen.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+extra_spacing_top = 12
+extra_spacing_bottom = 6
+extra_spacing_space = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=6]
+Button/styles/disabled = null
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 25
+extra_spacing_top = 5
+extra_spacing_bottom = 20
+font_data = ExtResource( 1 )
+
+[node name="SettingsScreen" type="Popup"]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+popup_exclusive = true
+script = ExtResource( 2 )
+
+[node name="TabContainer" type="TabContainer" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/GridContainer"]
+margin_top = 30.0
+margin_right = 234.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 1 )
+text = "Settings:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControllerV" type="VBoxContainer" parent="TabContainer/GridContainer"]
+margin_left = 238.0
+margin_right = 388.0
+margin_bottom = 104.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Fullscreen" type="Button" parent="TabContainer/GridContainer/ControllerV"]
+margin_right = 150.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( -150.331, -442.422 )
+theme = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.890196, 0.780392, 0.152941, 1 )
+custom_colors/font_color_pressed = Color( 0.843137, 0.560784, 0.00392157, 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Borderless" type="Button" parent="TabContainer/GridContainer/ControllerV"]
+margin_top = 54.0
+margin_right = 150.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( -150.331, -442.422 )
+theme = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.890196, 0.780392, 0.152941, 1 )
+custom_colors/font_color_pressed = Color( 0.843137, 0.560784, 0.00392157, 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ControllerH" type="HBoxContainer" parent="TabContainer/GridContainer"]
+margin_top = 108.0
+margin_right = 234.0
+margin_bottom = 158.0
+alignment = 1
+
+[node name="Esquerdo" type="Button" parent="TabContainer/GridContainer/ControllerH"]
+margin_left = 25.0
+margin_right = 75.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( -150.331, -442.422 )
+theme = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.890196, 0.780392, 0.152941, 1 )
+custom_colors/font_color_pressed = Color( 0.843137, 0.560784, 0.00392157, 1 )
+text = "<<"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numb" type="Button" parent="TabContainer/GridContainer/ControllerH"]
+margin_left = 79.0
+margin_right = 154.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( -150.331, -442.422 )
+theme = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.890196, 0.780392, 0.152941, 1 )
+custom_colors/font_color_pressed = Color( 0.843137, 0.560784, 0.00392157, 1 )
+text = "100"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Direito" type="Button" parent="TabContainer/GridContainer/ControllerH"]
+margin_left = 158.0
+margin_right = 208.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( -150.331, -442.422 )
+theme = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.890196, 0.780392, 0.152941, 1 )
+custom_colors/font_color_pressed = Color( 0.843137, 0.560784, 0.00392157, 1 )
+text = ">>"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Controller" type="VBoxContainer" parent="TabContainer/GridContainer"]
+margin_left = 238.0
+margin_top = 108.0
+margin_right = 388.0
+margin_bottom = 158.0
+alignment = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="Button" parent="TabContainer/GridContainer/Controller"]
+margin_right = 150.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( -150.331, -442.422 )
+theme = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.890196, 0.780392, 0.152941, 1 )
+custom_colors/font_color_pressed = Color( 0.843137, 0.560784, 0.00392157, 1 )
+text = "Return"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Preto Fundo" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+color = Color( 0, 0, 0, 0.415686 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="TabContainer/GridContainer/ControllerV/Fullscreen" to="." method="_on_Fullscreen_pressed"]
+[connection signal="pressed" from="TabContainer/GridContainer/ControllerV/Borderless" to="." method="_on_Borderless_pressed"]
+[connection signal="pressed" from="TabContainer/GridContainer/ControllerH/Esquerdo" to="." method="_on_Esquerdo_pressed"]
+[connection signal="pressed" from="TabContainer/GridContainer/ControllerH/Direito" to="." method="_on_Direito_pressed"]
+[connection signal="pressed" from="TabContainer/GridContainer/Controller/Return" to="." method="_on_Return_pressed"]
