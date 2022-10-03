@@ -11,7 +11,6 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			shape = find_colliding_shape(event.position)
-			print_debug("print ", shape)
 			if shape == null:
 				return
 			shape.dragging = true
@@ -21,6 +20,7 @@ func _input(event):
 			for node in get_node("Shapes").get_children():
 				node.set_sleeping(false)
 			shape = null
+
 	elif event is InputEventMouseMotion and shape != null:
 		if shape.translate_by == null:
 			shape.translate_by = Vector2(0,0)
@@ -31,19 +31,16 @@ func _input(event):
 func find_colliding_shape(pos):
 	var pointer = get_node("Pointer")
 	pointer.set_position(pos)
-	var pointer_shape = pointer.shape_owner_get_shape(0,0)
+	var pointer_shape = pointer.shape_owner_get_shape(1,0)
 	var pointer_transform = pointer.get_transform()
 	for node in get_node("Shapes").get_children():
 		var shape = node.shape_owner_get_shape(0,0)
 		var res = shape.collide(node.get_transform(), pointer_shape, pointer_transform)
 		print_debug()
-		print ("res" , res)
-#		res = true
 		if res:
-			print_debug()
-			print ("pointer ", pointer)
 			return node
-	return null
+		else:
+				return null
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
