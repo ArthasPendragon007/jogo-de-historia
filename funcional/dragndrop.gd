@@ -3,7 +3,8 @@ extends Node2D
 var selected = false
 var rest_point
 var rest_nodes = []
-enum {YES, NOT}
+
+#export onready var militar = get_node("militar/milit")
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("zone")
@@ -13,7 +14,6 @@ func _ready():
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		selected = true
-		
 func _physics_process(delta):
 	if get_tree().get_nodes_in_group("yes"):
 		print_debug() 
@@ -25,7 +25,9 @@ func _physics_process(delta):
 	else:
 		global_position = lerp(global_position, rest_point, 10 * delta)
 #		rotation = lerp_angle(rotation, 0, 10 * delta)
-		
+export(NodePath) onready var militar = get_node("militar/TextureProgress") as TextureProgress
+export(NodePath) onready var word = get_node("")
+export(int) var health
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and not event.pressed:
@@ -34,6 +36,19 @@ func _input(event):
 			for child in rest_nodes:
 				var distance = global_position.distance_to(child.global_position)
 				if distance < shortest_dist:
+#					militar.value =
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
+					child.NO()
+					if child.NO():
+						emit_signal("check")
+					child.YES()
+					if child.YES():
+#						var carta:= get_node(".")
+#						selected = false
+#						connect("check", Node,"new")
+						emit_signal("check")
+						get_node(".").queue_free()
+signal check
+#				if childs.select()

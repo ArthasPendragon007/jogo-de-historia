@@ -19,3 +19,9 @@ func select():
 func deselect():
 	modulate = Color.white
 	modulate.a = 0.05
+func NO():
+#	print_debug()
+	return false
+func YES():
+#	print_debug()
+	return false

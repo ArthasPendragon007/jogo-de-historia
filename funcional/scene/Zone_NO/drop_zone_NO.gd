@@ -5,7 +5,7 @@ export var correct = false
 
 func _draw():
 	draw_circle(Vector2.ZERO, 75, Color.blanchedalmond)
-	modulate.a = 0.05
+	modulate.a = 0.5
 	
 func select():
 	print("no")
@@ -17,7 +17,11 @@ func select():
 		emit_signal("correct")
 	
 func deselect():
-	modulate = Color.white
-	modulate.a = 0.05
-	
+	modulate = Color.red
+	modulate.a = 0.5
+func YES():
+	return false
+func NO():
+	return true
+
 
